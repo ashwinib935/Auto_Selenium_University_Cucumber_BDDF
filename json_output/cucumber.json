@@ -1,0 +1,70 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Validate University Home Page Test",
+        "description": "",
+        "id": "univesity-application-test;validate-university-home-page-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 29358509900,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user is on browser",
+            "match": {
+              "location": "HomePageSteps.user_open_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 231378700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user is on login page",
+            "match": {
+              "location": "HomePageSteps.userIsOnLoginPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17851292500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user log into app",
+            "match": {
+              "location": "HomePageSteps.userLogIntoApp()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 52667000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "validate home page title",
+            "match": {
+              "location": "HomePageSteps.validateHomePageTitle()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Univesity Application Test",
+    "description": "",
+    "id": "univesity-application-test",
+    "keyword": "Feature",
+    "uri": "I:/Ashwini_Testing/University_Cucumber/src/main/java/com/qa/features/university.feature"
+  }
+]
