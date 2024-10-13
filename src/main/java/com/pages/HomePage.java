@@ -3,6 +3,8 @@ package com.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,8 +16,10 @@ public class HomePage {
  private  By personalInfoLink = By.xpath("//ul[@role='tablist']//li[1]");
  private By educationHistoryLink =  By.xpath("//ul[@role='tablist']//li[2]");
 
+    WebDriverWait wait;
  public  HomePage(WebDriver driver){
      this.driver = driver;
+     wait = new WebDriverWait(driver,10);
 
  }
 
@@ -24,8 +28,7 @@ public class HomePage {
  }
 
  public boolean myProfileTagIsDisplayed(String myProfile) throws InterruptedException {
-     driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-     Thread.sleep(5000);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(personalInfoLink));
      List<WebElement> list = driver.findElements(navList);
      System.out.println("list"+list);
       for (WebElement e :list){
@@ -38,15 +41,11 @@ public class HomePage {
  }
 
  public PersonalInfoPage getPersonalInfoPage() throws InterruptedException {
-     driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-     Thread.sleep(5000);
         driver.findElement(personalInfoLink).click();
         return  new PersonalInfoPage(driver);
  }
 
  public EducationHistoryPage getEducationHistoryPage()throws InterruptedException{
-     driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-     Thread.sleep(5000);
      driver.findElement(educationHistoryLink).click();
      return  new EducationHistoryPage(driver);
  }
